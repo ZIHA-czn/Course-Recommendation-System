@@ -1,0 +1,188 @@
+Offline AI Chatbot using Phi-3 and Ollama
+1️⃣ Introduction
+
+The project includes an AI chatbot that works completely offline.
+The chatbot uses a local Large Language Model (LLM) to understand user questions and generate responses.
+
+Instead of using online AI services, the chatbot runs on the local computer using Ollama and the Phi-3 language model.
+
+This allows the chatbot to:
+
+Answer questions
+
+Assist users with course information
+
+Provide guidance without internet access
+
+The model Phi-3 was developed by Microsoft.
+
+2️⃣ What is Ollama?
+
+Ollama is a tool that allows developers to run large AI language models locally on their computer.
+
+Main Features
+
+Runs AI models offline
+
+Easy to install and use
+
+Provides an API for Python applications
+
+Supports many AI models
+
+Examples of models supported:
+
+Phi-3
+
+Llama
+
+Mistral
+
+In this project, Phi-3 is used as the chatbot model.
+
+3️⃣ What is Phi-3?
+
+Phi-3 is a small but powerful language model created by Microsoft.
+
+It belongs to the field of
+Natural Language Processing (NLP).
+
+Purpose
+
+Phi-3 can:
+
+Understand human language
+
+Answer questions
+
+Generate text
+
+Assist users in conversations
+
+Advantages
+
+Lightweight model
+
+Fast response
+
+Works well on normal computers
+
+Can run completely offline
+
+4️⃣ Installing Ollama
+
+Step 1
+Download Ollama from the official website.
+
+Step 2
+Install the software.
+
+Step 3
+Check installation by opening terminal or command prompt and running:
+
+ollama --version
+
+If installed correctly, it will show the version number.
+
+5️⃣ Downloading the Phi-3 Model
+
+Run this command in terminal:
+
+ollama run phi3
+
+The first time you run this command:
+
+Ollama downloads the Phi-3 model
+
+The model is saved locally on your computer
+
+After downloading, it can run without internet.
+
+6️⃣ How the Chatbot Works
+
+System workflow:
+
+User Input
+     ↓
+Python Application
+     ↓
+Ollama Local API
+     ↓
+Phi-3 AI Model
+     ↓
+Generated Response
+     ↓
+Displayed to User
+
+The chatbot reads the user’s question and sends it to the Phi-3 model running locally.
+
+The model processes the question and returns an answer.
+
+7️⃣ Python Integration
+
+The chatbot is connected to Ollama using Python.
+
+Example Python code:
+
+import requests
+
+url = "http://localhost:11434/api/generate"
+
+data = {
+    "model": "phi3",
+    "prompt": "What is machine learning?",
+    "stream": False
+}
+
+response = requests.post(url, json=data)
+
+print(response.json()["response"])
+Explanation
+
+Python sends a request to Ollama
+
+Ollama sends the prompt to the Phi-3 model
+
+The model generates an answer
+
+The response is returned to Python
+
+8️⃣ System Requirements
+
+Minimum requirements:
+
+8 GB RAM
+
+10 GB storage
+
+Python installed
+
+Ollama installed
+
+Operating systems supported:
+
+Windows
+
+Linux
+
+MacOS
+
+9️⃣ Advantages of Offline Chatbot
+
+✔ Works without internet
+✔ No API costs
+✔ Faster responses
+✔ Privacy protection
+✔ Suitable for educational projects
+
+🔟 Summary
+
+The project chatbot uses:
+
+Component	Technology
+AI Model	Phi-3
+AI Runtime	Ollama
+Programming Language	Python
+Mode	Offline
+
+The chatbot can answer questions and assist users by processing natural language using the Phi-3 model running locally through Ollama.
